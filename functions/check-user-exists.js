@@ -16,8 +16,8 @@ exports.handler = async (event, request, context) => {
 
     let resp
     console.log(user)
-    if(!user) resp = `${username} doesn't exist`
-    else resp = `${username} exists`
+    // if(!user) resp = {username: `${username}`}
+    // else resp = {username: ''}
     return{
         statusCode: 200,
         headers: {
@@ -26,6 +26,6 @@ exports.handler = async (event, request, context) => {
             /* Required for cookies, authorization headers with HTTPS */
             'Access-Control-Allow-Credentials': true
           },
-        body: JSON.stringify(resp)
+        body: JSON.stringify(user)
     }
 }
